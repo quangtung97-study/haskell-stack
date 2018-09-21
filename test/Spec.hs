@@ -1,2 +1,18 @@
+import Test.HUnit
+
+getNumber :: Int
+getNumber = 123
+
+test1 = TestCase $ assertEqual "example" 121 getNumber 
+test2 = TestCase $ assertEqual "example2" 125 getNumber
+
+tests = TestList [
+    TestLabel "test1" test1,
+    TestLabel "test2" test2
+    ]
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = do
+    counts <- runTestTT tests
+    print counts
+    
