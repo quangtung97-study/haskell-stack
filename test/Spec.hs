@@ -11,8 +11,6 @@ tests = TestList [
     TestLabel "test2" test2
     ]
 
-main :: IO ()
-main = do
-    counts <- runTestTT tests
-    print counts
+main :: IO Counts
+main = runTestTT tests
     
